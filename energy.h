@@ -76,7 +76,8 @@
 #include <assert.h>
 #include "graph.h"
 
-template <typename captype, typename tcaptype, typename flowtype> class Energy: public Graph<captype,tcaptype,flowtype>
+template <typename captype, typename tcaptype, typename flowtype>
+class Energy: public Graph<captype,tcaptype,flowtype>
 {
 	typedef Graph<captype,tcaptype,flowtype> GraphT;
 public:

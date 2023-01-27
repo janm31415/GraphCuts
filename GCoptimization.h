@@ -110,8 +110,8 @@
 
 #include <cstddef>
 #include "energy.h"
-#include "graph.cpp"
-#include "maxflow.cpp"
+#include "graph.hpp"
+#include "maxflow.hpp"
 
 /////////////////////////////////////////////////////////////////////
 // Utility functions, classes, and macros
