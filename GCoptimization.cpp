@@ -298,7 +298,12 @@ OLGA_INLINE void GCoptimization::addterm2_checked(EnergyT* e, VarID i, VarID j, 
 	// Inside energy/maxflow code the submodularity check is performed as an assertion,
 	// but is optimized out. We check it in release builds as well.
 	if ( e00+e11 > e01+e10 )
-		handleError("Non-submodular expansion term detected; smooth costs must be a metric for expansion");
+		{
+		if ((e00+e11)-(e01+e10)>1e-5)
+			handleError("Non-submodular expansion term detected; smooth costs must be a metric for expansion");
+		//e00+e11 == e01+e10
+		e10 = e00+e11-e01;
+		}
 	m_beforeExpansionEnergy += e11*w;
 	e->add_term2(i,j,e00*w,e01*w,e10*w,e11*w);
 }
